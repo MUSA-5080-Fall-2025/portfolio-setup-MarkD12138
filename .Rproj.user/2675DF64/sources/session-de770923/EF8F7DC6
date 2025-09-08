@@ -3,7 +3,7 @@
     "path": "F:/Upenn/MUSA 5080 Public Policy Analytics/portfolio-setup-MarkD12138/_quarto.yml",
     "project_path": "_quarto.yml",
     "type": "yaml",
-    "hash": "4138588332",
+    "hash": "1128904149",
     "contents": "",
     "dirty": false,
     "created": 1757350899470.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "16,25",
-        "scrollLine": "4"
+        "cursorPosition": "12,8",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1757350987,
+    "lastKnownWriteTime": 1757351286,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1757350987682,
+    "last_content_update": 1757351286291,
     "read_only": false,
     "read_only_alternatives": []
 }
