@@ -10,6 +10,10 @@ website:
         text: Home
       - href: weekly-notes/
         text: Weekly Notes
+        menu: 
+          - href: weekly-notes
+            text: "ALL note"
+          - href: 
 
 format:
   html:
