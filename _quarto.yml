@@ -10,7 +10,7 @@ website:
         text: Home
       - href: abou.qmd
         text: About
-      - text: Weekly Notes
+      - text: "Weekly Notes"
         menu: 
           - href: weekly-notes/
             text: "ALL note"
