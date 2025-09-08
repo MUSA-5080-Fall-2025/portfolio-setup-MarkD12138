@@ -4,7 +4,7 @@ date: "2025-09-08"
 ---
 
 ## Key Concepts Learned
-- [List main concepts from lecture]
+- The use of Github and Github Desktop
 - [Technical skills covered]
 
 ## Coding Techniques
