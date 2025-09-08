@@ -15,7 +15,10 @@ Advanced spatial analysis and data science for urban planning and public policy.
 - **Final Project:** Capstone modeling challenge
 
 ## About Me
-[Students will customize this section]
+Name and background: My name is Zimu Deng(Mark). I am a MUSA student and have background in Architecture.
+Email address: deng13@design.upenn.edu / zimudeng@outlook.com
+GitHub username: MarkD12138
+The reason that I'm taking this class: 
 
 ## Contact
 - Email: [your.email@upenn.edu]
