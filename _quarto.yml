@@ -8,12 +8,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: abou.qmd
-        text: About
       - text: "Weekly Notes"
         menu: 
-          - href: weekly-notes/
-            text: "ALL note"
           - href: weekly-notes/week-01-notes.qmd
             text: "Week 1"
 
