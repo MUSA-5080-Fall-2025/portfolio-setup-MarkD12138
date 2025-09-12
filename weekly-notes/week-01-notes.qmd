@@ -5,19 +5,27 @@ date: "2025-09-08"
 
 ## Key Concepts Learned
 - The use of Github and Github Desktop
-- [Technical skills covered]
+Key concept: Repository (repo), Commit, Push (Send changes to the Cloud), Pull (Download changes from the Cloud)
+- Github Workflow
+Edit locally - Commit - Push
+- Assignment via Github Classroom
+- Quarto for publishing (Code, Text, Output)
+- R for Policy Analysis, especially using tidyverse
+- Tibbles are better than data frames
 
 ## Coding Techniques
-- [New R functions or approaches]
-- [Quarto features learned]
+- Basics for Markdown 
+- dplyr: select(), dilter(), mutate (), summarize(), group_by()
+- Pipeline
+- | means “or”, & means “and”
 
 ## Questions & Challenges
-- [What I didn't fully understand]
-- [Areas needing more practice]
+- The application of pipelin, how to use ?
+- Be familiar with Github workflow
 
 ## Connections to Policy
 - [How this week's content applies to real policy work]
 
 ## Reflection
-- [What was most interesting]
-- [How I'll apply this knowledge]
+- Trying to be familiar with Coding with R (tidyverse)
+- 
