@@ -24,8 +24,8 @@ Edit locally - Commit - Push
 - Be familiar with Github workflow
 
 ## Connections to Policy
-- [How this week's content applies to real policy work]
+- Understanding the basic system and workflow for data-driven public policy analytics
 
 ## Reflection
 - Trying to be familiar with Coding with R (tidyverse)
-- 
+- Exciting for Lab1 !

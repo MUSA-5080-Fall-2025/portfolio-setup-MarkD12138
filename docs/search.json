@@ -4,42 +4,42 @@
     "href": "weekly-notes/week-01-notes.html",
     "title": "Week 1 Notes - Course Introduction",
     "section": "",
-    "text": "The use of Github and Github Desktop\n[Technical skills covered]"
+    "text": "The use of Github and Github Desktop Key concept: Repository (repo), Commit, Push (Send changes to the Cloud), Pull (Download changes from the Cloud)\nGithub Workflow Edit locally - Commit - Push\nAssignment via Github Classroom\nQuarto for publishing (Code, Text, Output)\nR for Policy Analysis, especially using tidyverse\nTibbles are better than data frames"
   },
   {
     "objectID": "weekly-notes/week-01-notes.html#key-concepts-learned",
     "href": "weekly-notes/week-01-notes.html#key-concepts-learned",
     "title": "Week 1 Notes - Course Introduction",
     "section": "",
-    "text": "The use of Github and Github Desktop\n[Technical skills covered]"
+    "text": "The use of Github and Github Desktop Key concept: Repository (repo), Commit, Push (Send changes to the Cloud), Pull (Download changes from the Cloud)\nGithub Workflow Edit locally - Commit - Push\nAssignment via Github Classroom\nQuarto for publishing (Code, Text, Output)\nR for Policy Analysis, especially using tidyverse\nTibbles are better than data frames"
   },
   {
     "objectID": "weekly-notes/week-01-notes.html#coding-techniques",
     "href": "weekly-notes/week-01-notes.html#coding-techniques",
     "title": "Week 1 Notes - Course Introduction",
     "section": "Coding Techniques",
-    "text": "Coding Techniques\n\n[New R functions or approaches]\n[Quarto features learned]"
+    "text": "Coding Techniques\n\nBasics for Markdown\ndplyr: select(), dilter(), mutate (), summarize(), group_by()\nPipeline\nmeans “or”, & means “and”"
   },
   {
     "objectID": "weekly-notes/week-01-notes.html#questions-challenges",
     "href": "weekly-notes/week-01-notes.html#questions-challenges",
     "title": "Week 1 Notes - Course Introduction",
     "section": "Questions & Challenges",
-    "text": "Questions & Challenges\n\n[What I didn’t fully understand]\n[Areas needing more practice]"
+    "text": "Questions & Challenges\n\nThe application of pipelin, how to use ?\nBe familiar with Github workflow"
   },
   {
     "objectID": "weekly-notes/week-01-notes.html#connections-to-policy",
     "href": "weekly-notes/week-01-notes.html#connections-to-policy",
     "title": "Week 1 Notes - Course Introduction",
     "section": "Connections to Policy",
-    "text": "Connections to Policy\n\n[How this week’s content applies to real policy work]"
+    "text": "Connections to Policy\n\nUnderstanding the basic system and workflow for data-driven public policy analytics"
   },
   {
     "objectID": "weekly-notes/week-01-notes.html#reflection",
     "href": "weekly-notes/week-01-notes.html#reflection",
     "title": "Week 1 Notes - Course Introduction",
     "section": "Reflection",
-    "text": "Reflection\n\n[What was most interesting]\n[How I’ll apply this knowledge]"
+    "text": "Reflection\n\nTrying to be familiar with Coding with R (tidyverse)\nExciting for Lab1 !"
   },
   {
     "objectID": "index.html",
