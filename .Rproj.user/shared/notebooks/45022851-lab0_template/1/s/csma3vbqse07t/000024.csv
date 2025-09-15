@@ -1,0 +1,5 @@
+"0","
+# Challenge: Select all columns EXCEPT Engine Size
+select(car_data, -'Engine size')
+"
+"0",""

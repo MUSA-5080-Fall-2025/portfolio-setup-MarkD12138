@@ -1,0 +1,7 @@
+"0","avg_mileage_by_fuel_type <- car_data %>%
+  group_by(`Fuel type`) %>%
+  summarize(avg_mileage = mean(Mileage, na.rm = TRUE))
+
+avg_mileage_by_fuel_type
+"
+"0",""

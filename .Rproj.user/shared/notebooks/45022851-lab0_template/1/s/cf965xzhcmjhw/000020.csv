@@ -1,0 +1,3 @@
+"0",""
+"0","# Find luxury cars (from price category) with low mileage"
+"0","filter(car_data, price_category == ""high"", Mileage < 20000)"
