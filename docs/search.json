@@ -4,42 +4,42 @@
     "href": "weekly-notes/week-02-notes.html",
     "title": "Week 2 Notes - Algorithmic Decision Making & The Census",
     "section": "",
-    "text": "The use of Github and Github Desktop Key concept: Repository (repo), Commit, Push (Send changes to the Cloud), Pull (Download changes from the Cloud)\nGithub Workflow Edit locally - Commit - Push\nAssignment via Github Classroom\nQuarto for publishing (Code, Text, Output)\nR for Policy Analysis, especially using tidyverse\nTibbles are better than data frames"
+    "text": "Algorithm: a set of computational instruction for solving a problem or completing a task, especially in policy analysis and decision making\nAlgorithmic decision making in government contains input and output\nAlgorithmic decision making is especially appealing because it promises: Efficiency - process more cases faster; Consistency - same rules applied to everyone; Objectivity - removes human bias; Cost savings - fewer staff needed\nU.S. Census data is the official collection of demographic, housing, and economic information about the population, conducted by the U.S. Census Bureau\nCensus data is used to allocate political representation, distribute government funding, plan infrastructure and public services, track social and economic change, and support academic and business research\nCensus data matters because it provides the foundation for fair public policy, ensures that resources are distributed where they are most needed, enables governments to understand communities, and supports designing fair algorithms and monitoring neighborhood change\nCompared to census data, ACS data has more detailed information and will be more often to use\nLarge MOE relative to estimate = less reliable & Small MOE relative to estimate = more reliable"
   },
   {
     "objectID": "weekly-notes/week-02-notes.html#key-concepts-learned",
     "href": "weekly-notes/week-02-notes.html#key-concepts-learned",
     "title": "Week 2 Notes - Algorithmic Decision Making & The Census",
     "section": "",
-    "text": "The use of Github and Github Desktop Key concept: Repository (repo), Commit, Push (Send changes to the Cloud), Pull (Download changes from the Cloud)\nGithub Workflow Edit locally - Commit - Push\nAssignment via Github Classroom\nQuarto for publishing (Code, Text, Output)\nR for Policy Analysis, especially using tidyverse\nTibbles are better than data frames"
+    "text": "Algorithm: a set of computational instruction for solving a problem or completing a task, especially in policy analysis and decision making\nAlgorithmic decision making in government contains input and output\nAlgorithmic decision making is especially appealing because it promises: Efficiency - process more cases faster; Consistency - same rules applied to everyone; Objectivity - removes human bias; Cost savings - fewer staff needed\nU.S. Census data is the official collection of demographic, housing, and economic information about the population, conducted by the U.S. Census Bureau\nCensus data is used to allocate political representation, distribute government funding, plan infrastructure and public services, track social and economic change, and support academic and business research\nCensus data matters because it provides the foundation for fair public policy, ensures that resources are distributed where they are most needed, enables governments to understand communities, and supports designing fair algorithms and monitoring neighborhood change\nCompared to census data, ACS data has more detailed information and will be more often to use\nLarge MOE relative to estimate = less reliable & Small MOE relative to estimate = more reliable"
   },
   {
     "objectID": "weekly-notes/week-02-notes.html#coding-techniques",
     "href": "weekly-notes/week-02-notes.html#coding-techniques",
     "title": "Week 2 Notes - Algorithmic Decision Making & The Census",
     "section": "Coding Techniques",
-    "text": "Coding Techniques\n\nBasics for Markdown\ndplyr: select(), dilter(), mutate (), summarize(), group_by()\nPipeline\nmeans “or”, & means “and”"
+    "text": "Coding Techniques\n\nWe can use R packages to access census data directly\nUse get_acs() Function"
   },
   {
     "objectID": "weekly-notes/week-02-notes.html#questions-challenges",
     "href": "weekly-notes/week-02-notes.html#questions-challenges",
     "title": "Week 2 Notes - Algorithmic Decision Making & The Census",
     "section": "Questions & Challenges",
-    "text": "Questions & Challenges\n\nThe application of pipelin, how to use ?\nBe familiar with Github workflow"
+    "text": "Questions & Challenges\n\nHow to find the proper ACS data and right variables for my research questions"
   },
   {
     "objectID": "weekly-notes/week-02-notes.html#connections-to-policy",
     "href": "weekly-notes/week-02-notes.html#connections-to-policy",
     "title": "Week 2 Notes - Algorithmic Decision Making & The Census",
     "section": "Connections to Policy",
-    "text": "Connections to Policy\n\nUnderstanding the basic system and workflow for data-driven public policy analytics"
+    "text": "Connections to Policy\n\nIn the context of Public Sector, data collection has a long history with different types of data, and there also have some new data and transforming to prediction\nAlgorithm always has problems in real world implications (e.g. data bias, human choice participation)"
   },
   {
     "objectID": "weekly-notes/week-02-notes.html#reflection",
     "href": "weekly-notes/week-02-notes.html#reflection",
     "title": "Week 2 Notes - Algorithmic Decision Making & The Census",
     "section": "Reflection",
-    "text": "Reflection\n\nTrying to be familiar with Coding with R (tidyverse)\nExciting for Lab1 !"
+    "text": "Reflection\n\nI assume the data is accurate, representative, and relevant to my research question\nPeople or groups underrepresented in the census might be excluded from my analysis\nMy findings could reinforce stereotypes, justify biased policies, or ignore local differences\nI want policymakers to understand that my results depend on specific assumptions, data limitations, and interpretation choices, so they should be applied cautiously"
   },
   {
     "objectID": "labs/lab0/lab0_template.html",

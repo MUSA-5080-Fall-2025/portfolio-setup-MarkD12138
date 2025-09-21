@@ -4,28 +4,30 @@ date: "2025-09-15"
 ---
 
 ## Key Concepts Learned
-- The use of Github and Github Desktop
-Key concept: Repository (repo), Commit, Push (Send changes to the Cloud), Pull (Download changes from the Cloud)
-- Github Workflow
-Edit locally - Commit - Push
-- Assignment via Github Classroom
-- Quarto for publishing (Code, Text, Output)
-- R for Policy Analysis, especially using tidyverse
-- Tibbles are better than data frames
+- Algorithm: a set of computational instruction for solving a problem or completing a task, especially in policy analysis and decision making
+- Algorithmic decision making in government contains input and output
+- Algorithmic decision making is especially appealing because it promises: Efficiency - process more cases faster; Consistency - same rules applied to everyone; Objectivity - removes human bias; Cost savings - fewer staff needed
+
+- U.S. Census data is the official collection of demographic, housing, and economic information about the population, conducted by the U.S. Census Bureau
+- Census data is used to allocate political representation, distribute government funding, plan infrastructure and public services, track social and economic change, and support academic and business research
+- Census data matters because it provides the foundation for fair public policy, ensures that resources are distributed where they are most needed, enables governments to understand communities, and supports designing fair algorithms and monitoring neighborhood change
+- Compared to census data, ACS data has more detailed information and will be more often to use
+- Large MOE relative to estimate = less reliable & Small MOE relative to estimate = more reliable
+
 
 ## Coding Techniques
-- Basics for Markdown 
-- dplyr: select(), dilter(), mutate (), summarize(), group_by()
-- Pipeline
-- | means “or”, & means “and”
+- We can use R packages to access census data directly
+- Use  get_acs() Function
 
 ## Questions & Challenges
-- The application of pipelin, how to use ?
-- Be familiar with Github workflow
+- How to find the proper ACS data and right variables for my research questions
 
 ## Connections to Policy
-- Understanding the basic system and workflow for data-driven public policy analytics
+- In the context of Public Sector, data collection has a long history with different types of data, and there also have some new data and transforming to prediction
+- Algorithm always has problems in real world implications (e.g. data bias, human choice participation)
 
 ## Reflection
-- Trying to be familiar with Coding with R (tidyverse)
-- Exciting for Lab1 !
+- I assume the data is accurate, representative, and relevant to my research question
+- People or groups underrepresented in the census might be excluded from my analysis
+- My findings could reinforce stereotypes, justify biased policies, or ignore local differences
+- I want policymakers to understand that my results depend on specific assumptions, data limitations, and interpretation choices, so they should be applied cautiously
