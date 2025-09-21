@@ -14,12 +14,16 @@ website:
             text: "Week 1"
           - href: weekly-notes/week-02-notes.qmd
             text: "Week 2"
-      - text: Labs
+      - text: "Labs"
         menu:
-          - href: labs/lab_0/
+          - href: labs/lab0/lab0_template.qmd
             text: "Lab 0: dplyr Basics"
-          - href: labs/lab_1/
-            text: "Lab 1: Census Data Quality for Policy Decisions"
+          - href: labs/lab1/
+            text: "Lab 1" 
+      - text: "Assignment"
+        menu:
+          - href: assignments/assignment_1/assignment1_template.qmd
+            text: "Assignment 1: Census Data Exploration"
 format:
   html:
     theme: cosmo
