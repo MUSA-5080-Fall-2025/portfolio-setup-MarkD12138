@@ -12,6 +12,14 @@ website:
         menu: 
           - href: weekly-notes/week-01-notes.qmd
             text: "Week 1"
+          - href: weekly-notes/week-02-notes.qmd
+            text: "Week 2"
+      - text: Labs
+        menu:
+          - href: labs/lab_0/
+            text: Lab 0: dplyr Basics
+          - href: labs/lab_1/
+            text: Lab 1: Census Data Quality for Policy Decisions
 
 format:
   html:

@@ -1,0 +1,31 @@
+---
+title: "Week 2 Notes - Algorithmic Decision Making & The Census"
+date: "2025-09-15"
+---
+
+## Key Concepts Learned
+- The use of Github and Github Desktop
+Key concept: Repository (repo), Commit, Push (Send changes to the Cloud), Pull (Download changes from the Cloud)
+- Github Workflow
+Edit locally - Commit - Push
+- Assignment via Github Classroom
+- Quarto for publishing (Code, Text, Output)
+- R for Policy Analysis, especially using tidyverse
+- Tibbles are better than data frames
+
+## Coding Techniques
+- Basics for Markdown 
+- dplyr: select(), dilter(), mutate (), summarize(), group_by()
+- Pipeline
+- | means “or”, & means “and”
+
+## Questions & Challenges
+- The application of pipelin, how to use ?
+- Be familiar with Github workflow
+
+## Connections to Policy
+- Understanding the basic system and workflow for data-driven public policy analytics
+
+## Reflection
+- Trying to be familiar with Coding with R (tidyverse)
+- Exciting for Lab1 !
