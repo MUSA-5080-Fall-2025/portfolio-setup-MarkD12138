@@ -10,5 +10,14 @@
   },
   "labs/lab0/scripts/lab0_template.qmd": {
     "lab0_template.html": "b3f0d563"
+  },
+  "labs/lab0/lab0_template.qmd": {
+    "lab0_template.html": "2b8ca77f"
+  },
+  "labs/lab1/assignment1_template.qmd": {
+    "assignment1_template.html": "05dfb9ce"
+  },
+  "weekly-notes/week-02-notes.qmd": {
+    "week-02-notes.html": "b1ece924"
   }
 }

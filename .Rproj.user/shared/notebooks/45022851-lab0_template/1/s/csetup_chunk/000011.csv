@@ -1,4 +1,0 @@
-"0","car_data <- read_csv(""data/car_sales_data.csv"")
-"
-"2","错误: 'data/car_sales_data.csv' does not exist in current working directory ('F:/Upenn/MUSA 5080 Public Policy Analytics/portfolio-setup-MarkD12138/labs/lab0/scripts').
-"

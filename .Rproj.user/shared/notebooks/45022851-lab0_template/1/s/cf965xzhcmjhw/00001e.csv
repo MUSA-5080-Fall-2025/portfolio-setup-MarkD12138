@@ -1,6 +1,0 @@
-"0","# Find all Toyota cars
-filter(car_data, Manufacturer == ""Toyota"")
-"
-"0",""
-"0","# Find cars with mileage less than 30,000"
-"0","filter(car_data, Mileage < 30000)"

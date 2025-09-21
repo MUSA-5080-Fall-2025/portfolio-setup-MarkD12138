@@ -19,7 +19,7 @@ website:
           - href: labs/lab_0/
             text: "Lab 0: dplyr Basics"
           - href: labs/lab_1/
-            text: "Lab 1: Census Data Quality for Policy Decisions"
+            text: "Lab 1: Census Data Quality for Policy Decisions" 
 format:
   html:
     theme: cosmo
