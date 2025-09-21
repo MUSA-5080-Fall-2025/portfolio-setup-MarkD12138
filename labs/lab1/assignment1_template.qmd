@@ -1,8 +1,8 @@
 ---
 title: "Assignment 1: Census Data Quality for Policy Decisions"
 subtitle: "Evaluating Data Reliability for Algorithmic Decision-Making"
-author: "Your Name Here"
-date: today
+author: "Zimu DENG (Mark)"
+date: "2025/9/20"
 format: 
   html:
     code-fold: false
