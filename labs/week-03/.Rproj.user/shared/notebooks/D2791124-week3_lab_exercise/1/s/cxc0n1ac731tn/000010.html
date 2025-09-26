@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="lib/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="lib/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="lib/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="lib/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="lib/kePrint-0.0.1/kePrint.js"></script>
+<link href="lib/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+</head>
+<body>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;border-bottom: 0;">
+<caption>Pennsylvania Counties: Median Household Income with Statistical Uncertainty</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> County </th>
+   <th style="text-align:right;"> Median Income </th>
+   <th style="text-align:right;"> Margin of Error </th>
+   <th style="text-align:right;"> CV (%) </th>
+   <th style="text-align:left;"> Reliability </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Forest County, Pennsylvania </td>
+   <td style="text-align:right;"> 46,188 </td>
+   <td style="text-align:right;"> 4,612 </td>
+   <td style="text-align:right;"> 9.985278 </td>
+   <td style="text-align:left;"> 🟢          | </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sullivan County, Pennsylvania </td>
+   <td style="text-align:right;"> 62,910 </td>
+   <td style="text-align:right;"> 5,821 </td>
+   <td style="text-align:right;"> 9.252901 </td>
+   <td style="text-align:left;"> 🟢          | </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Union County, Pennsylvania </td>
+   <td style="text-align:right;"> 64,914 </td>
+   <td style="text-align:right;"> 4,753 </td>
+   <td style="text-align:right;"> 7.321995 </td>
+   <td style="text-align:left;"> 🟢          | </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Montour County, Pennsylvania </td>
+   <td style="text-align:right;"> 72,626 </td>
+   <td style="text-align:right;"> 5,146 </td>
+   <td style="text-align:right;"> 7.085617 </td>
+   <td style="text-align:left;"> 🟢          | </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Elk County, Pennsylvania </td>
+   <td style="text-align:right;"> 61,672 </td>
+   <td style="text-align:right;"> 4,091 </td>
+   <td style="text-align:right;"> 6.633480 </td>
+   <td style="text-align:left;"> 🟢          | </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Greene County, Pennsylvania </td>
+   <td style="text-align:right;"> 66,283 </td>
+   <td style="text-align:right;"> 4,247 </td>
+   <td style="text-align:right;"> 6.407374 </td>
+   <td style="text-align:left;"> 🟢          | </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cameron County, Pennsylvania </td>
+   <td style="text-align:right;"> 46,186 </td>
+   <td style="text-align:right;"> 2,605 </td>
+   <td style="text-align:right;"> 5.640237 </td>
+   <td style="text-align:left;"> 🟢          | </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Snyder County, Pennsylvania </td>
+   <td style="text-align:right;"> 65,914 </td>
+   <td style="text-align:right;"> 3,666 </td>
+   <td style="text-align:right;"> 5.561793 </td>
+   <td style="text-align:left;"> 🟢          | </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Carbon County, Pennsylvania </td>
+   <td style="text-align:right;"> 64,538 </td>
+   <td style="text-align:right;"> 3,424 </td>
+   <td style="text-align:right;"> 5.305402 </td>
+   <td style="text-align:left;"> 🟢          | </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Warren County, Pennsylvania </td>
+   <td style="text-align:right;"> 57,925 </td>
+   <td style="text-align:right;"> 3,005 </td>
+   <td style="text-align:right;"> 5.187743 </td>
+   <td style="text-align:left;"> 🟢          | </td>
+  </tr>
+</tbody>
+<tfoot>
+<tr><td style="padding: 0; " colspan="100%"><span style="font-style: italic;">Notes:</span></td></tr>
+<tr><td style="padding: 0; " colspan="100%">
+<sup></sup> Coefficient of Variation (CV) indicates reliability:</td></tr>
+<tr><td style="padding: 0; " colspan="100%">
+<sup></sup> 🟢 High reliability (CV &lt; 12%)</td></tr>
+<tr><td style="padding: 0; " colspan="100%">
+<sup></sup> 🟡 Moderate reliability (CV 12-40%)</td></tr>
+<tr><td style="padding: 0; " colspan="100%">
+<sup></sup> 🔴 Low reliability (CV &gt; 40%)</td></tr>
+<tr><td style="padding: 0; " colspan="100%">
+<sup></sup> Following Jurjevich et al. (2018) research recommendations</td></tr>
+<tr><td style="padding: 0; " colspan="100%">
+<sup></sup> Source: American Community Survey 2018-2022 5-Year Estimates</td></tr>
+</tfoot>
+</table> <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"]]}})</script><script async src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

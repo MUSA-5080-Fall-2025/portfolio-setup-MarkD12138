@@ -1,0 +1,11 @@
+"0","# Case-insensitive search using regex
+education_vars <- acs_vars_2022 %>%
+  filter(str_detect(label, regex(""bachelor"", ignore_case = TRUE)))
+
+print(""Education variables:"")
+"
+"1","[1]"
+"1"," ""Education variables:"""
+"1","
+"
+"0","head(education_vars, 5)"

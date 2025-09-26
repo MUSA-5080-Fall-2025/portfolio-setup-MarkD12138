@@ -1,0 +1,7 @@
+"0","print(""Household income variables:"")
+"
+"1","[1]"
+"1"," ""Household income variables:"""
+"1","
+"
+"0","head(household_income)"

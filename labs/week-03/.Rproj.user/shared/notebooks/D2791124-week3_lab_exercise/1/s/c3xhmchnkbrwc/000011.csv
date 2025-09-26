@@ -1,0 +1,6 @@
+"0",""
+"0","# Alternative: search by concept"
+"0","income_concept <- acs_vars_2022 %>%"
+"0","  filter(str_detect(concept, ""Median Household Income""))"
+"0",""
+"0","head(income_concept)"

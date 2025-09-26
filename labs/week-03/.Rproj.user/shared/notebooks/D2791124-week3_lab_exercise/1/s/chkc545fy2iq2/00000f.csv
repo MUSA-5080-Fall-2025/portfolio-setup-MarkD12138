@@ -1,0 +1,10 @@
+"0","table_b19 <- acs_vars_2022 %>%
+  filter(str_detect(name, ""^B19""))  # ^ means ""starts with""
+
+print(""All B19 (Income) table variables:"")
+"
+"1","[1]"
+"1"," ""All B19 (Income) table variables:"""
+"1","
+"
+"0","head(table_b19, 10)"
