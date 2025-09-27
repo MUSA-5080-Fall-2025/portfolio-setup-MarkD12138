@@ -52,13 +52,18 @@ If there is a special character like comma, you need use double quote mark so th
 
 ```{r setup}
 # Load required packages (hint: you need tidycensus, tidyverse, and knitr)
+library(tidycensus)
+library(tidyverse)
+library(knitr)
 
 # Set your Census API key
+census_api_key("cd859f2a38103dda55948d92b3679de845f42f0f")
 
 # Choose your state for analysis - assign it to a variable called my_state
+my_state <- "PA"
 ```
 
-**State Selection:** I have chosen **[Your State Name]** for this analysis because: [Brief explanation of why you chose this state]
+**State Selection:** I have chosen **[Pennsylvania]** for this analysis because: I currently live and study here, so understanding the data quality and its implications for local communities is directly relevant to my daily life and policy understanding.
 
 # Part 2: County-Level Resource Assessment
 
@@ -77,11 +82,28 @@ If there is a special character like comma, you need use double quote mark so th
 
 ```{r county-data}
 # Write your get_acs() code here
+PA_data <- get_acs(
+  geography = "county",
+  variables = c(
+    total_pop = "B01003_001",
+    median_income = "B19013_001"
+  ),
+  state = my_state,
+  year = 2022,
+  survey = "acs5",
+  output = "wide"
+)
 
 # Clean the county names to remove state name and "County" 
 # Hint: use mutate() with str_remove()
-
+PA_clean <- PA_data %>%
+  mutate(
+    NAME = str_remove(NAME, "County, Pennsylvania")
+  )
+  
 # Display the first few rows
+glimpse(PA_clean)
+head(PA_clean)
 ```
 
 ## 2.2 Data Quality Assessment
@@ -100,9 +122,26 @@ If there is a special character like comma, you need use double quote mark so th
 
 ```{r income-reliability}
 # Calculate MOE percentage and reliability categories using mutate()
+PA_reliability <- PA_clean %>%
+  mutate(
+    MOE = (median_incomeM / median_incomeE) * 100,
+    re_categories = case_when(
+      MOE < 5 ~ "High Confidence",
+      MOE >= 5 & MOE <= 10 ~ "Moderate Confidence",
+      TRUE ~ "Low Confidence"
+    ),
+    unreliable_flag = MOE > 10
+  )
 
 # Create a summary showing count of counties in each reliability category
 # Hint: use count() and mutate() to add percentages
+PA_reliability_summary <- PA_reliability %>%
+  count(re_categories) %>%   
+  mutate(
+    percent = n / sum(n) * 100   # 计算百分比
+  )
+
+PA_reliability_summary
 ```
 
 ## 2.3 High Uncertainty Counties
@@ -119,8 +158,22 @@ If there is a special character like comma, you need use double quote mark so th
 
 ```{r high-uncertainty}
 # Create table of top 5 counties by MOE percentage
+reliability_sort <- PA_reliability %>%
+  arrange(desc(MOE))
+
+Top5_county <- reliability_sort %>%
+  slice_head(n = 5) %>%
+  select(NAME,          
+         median_incomeE,
+         median_incomeM,
+         MOE,
+         re_categories)
 
 # Format as table with kable() - include appropriate column names and caption
+kable(Top5_county, 
+      align = c("l","l","l","l","l"),
+      col.names = c("County", "Medain Income", "Margin of Error", "MOE(%)", "Reliability Category"),
+      caption = "Top 5 Counties by MOE Percentage")
 ```
 
 **Data Quality Commentary:**
@@ -138,9 +191,20 @@ If there is a special character like comma, you need use double quote mark so th
 ```{r select-counties}
 # Use filter() to select 2-3 counties from your county_reliability data
 # Store the selected counties in a variable called selected_counties
+selected_counties <- reliability_sort %>%
+  filter(str_detect(NAME, "Philadelphia") | str_detect(NAME, "Warren")) %>%
+  select(NAME,          
+         median_incomeE,
+         MOE,
+         re_categories)
 
 # Display the selected counties with their key characteristics
 # Show: county name, median income, MOE percentage, reliability category
+kable(selected_counties, 
+      align = c("l","l","l","l"),
+      col.names = c("County", "Medain Income", "MOE(%)", "Reliability Category"),
+      caption = "2 Selected Counties")
+
 ```
 
 **Comment on the output:** [write something :)]
@@ -158,14 +222,38 @@ If there is a special character like comma, you need use double quote mark so th
 
 ```{r tract-demographics}
 # Define your race/ethnicity variables with descriptive names
-
 # Use get_acs() to retrieve tract-level data
 # Hint: You may need to specify county codes in the county parameter
+County_data <- get_acs(
+  geography = "tract",
+  variables = c(
+    White_Alone = "B03002_003",
+    Black_American = "B03002_004",
+    Hispanic_Latino = "B03002_012",
+    total_population = "B03002_001"
+  ),
+  state = 42,
+  county = c("101", "123"),
+  year = 2022,
+  survey = "acs5",
+  output = "wide"
+)
 
 # Calculate percentage of each group using mutate()
 # Create percentages for white, Black, and Hispanic populations
+County_data <- County_data %>%
+  mutate(
+    pct_white   = 100 * White_AloneE / total_populationE,
+    pct_black   = 100 * Black_AmericanE / total_populationE,
+    pct_hispanic= 100 * Hispanic_LatinoE / total_populationE
+  )
 
 # Add readable tract and county name columns using str_extract() or similar
+County_data <- County_data %>%
+  mutate(
+    county = str_extract(NAME, "(?<=; )[^;]+(?= County)"), 
+    tract  = str_extract(NAME, "(?<=Census )[^;]+")
+  )
 ```
 
 ## 3.3 Demographic Analysis
@@ -175,11 +263,28 @@ If there is a special character like comma, you need use double quote mark so th
 ```{r demographic-analysis}
 # Find the tract with the highest percentage of Hispanic/Latino residents
 # Hint: use arrange() and slice() to get the top tract
+Top_his <- County_data %>%
+  arrange(desc(pct_hispanic)) %>%
+  slice_head(n=1)
 
 # Calculate average demographics by county using group_by() and summarize()
 # Show: number of tracts, average percentage for each racial/ethnic group
+county_summary <- County_data %>%
+  group_by(county) %>%
+  summarize(
+    n_tracts = n(),
+    avg_white = weighted.mean(pct_white, total_populationE, na.rm = TRUE),
+    avg_black = weighted.mean(pct_black, total_populationE, na.rm = TRUE),
+    avg_hispanic = weighted.mean(pct_hispanic, total_populationE, na.rm = TRUE) 
+)
 
 # Create a nicely formatted table of your results using kable()
+kable(county_summary, 
+      align = c("l","l","l","l"),
+      col.names = c(
+        "County", "Tracts Number", "Average White Proportion", "Average Black Proportion", "Average Hispanic Proportion"),
+      caption = "Average Racial Demographics by County")
+
 ```
 
 # Part 4: Comprehensive Data Quality Evaluation
@@ -196,12 +301,38 @@ If there is a special character like comma, you need use double quote mark so th
 ```{r demographic-moe}
 # Calculate MOE percentages for white, Black, and Hispanic variables
 # Hint: use the same formula as before (margin/estimate * 100)
+tract_MOE <- County_data %>%
+  mutate(
+    MOE_white = (White_AloneM / White_AloneE) * 100,
+    MOE_black = (Black_AmericanM / Black_AmericanE) * 100,
+    MOE_hispanic = (Hispanic_LatinoM / Hispanic_LatinoE) * 100
+  )
 
 # Create a flag for tracts with high MOE on any demographic variable
 # Use logical operators (| for OR) in an ifelse() statement
+tract_MOE <- tract_MOE %>%
+  mutate(
+    flag = ifelse(
+    MOE_white > 15 | MOE_black > 15 | MOE_hispanic > 15,
+    1,
+    0
+  )
+)
 
 # Create summary statistics showing how many tracts have data quality issues
+tract_issue_summary <- tract_MOE %>%
+  group_by(county) %>%
+  summarize(
+    n_tracts = n(),
+    quality_issues_count = sum(flag)
+  )
+tract_issue_summary
+
+summary(tract_MOE$MOE_white)
+summary(tract_MOE$MOE_black)
+summary(tract_MOE$MOE_hispanic)
 ```
+**Discussion:** This result indicates that at the tract level, the population estimates for different racial/ethnic groups have relatively large margins of error, reflecting substantial sampling error at this scale.
 
 ## 4.2 Pattern Analysis
 
@@ -212,8 +343,36 @@ If there is a special character like comma, you need use double quote mark so th
 # Calculate average characteristics for each group:
 # - population size, demographic percentages
 
+## Since all tracts in my selected data have MOE issues where at least 1 demographic variable has MOE > 15%, I select to use the count of demographic variable has MOE > 15% to present the severity of MOE issues
+tract_MOE2 <- tract_MOE %>%
+  mutate(
+    high_white    = MOE_white    > 15,
+    high_black    = MOE_black    > 15,
+    high_hispanic = MOE_hispanic > 15,
+    high_count    = high_white + high_black + high_hispanic,  
+    severity      = case_when(
+      high_count == 3 ~ "High",
+      high_count == 2 ~ "Moderate",
+      TRUE            ~ "Low"
+    )
+  )
+
 # Use group_by() and summarize() to create this comparison
 # Create a professional table showing the patterns
+pattern_tbl <- tract_MOE2 %>%
+  group_by(severity) %>%
+  summarise(
+    n_tracts = n(),
+    pop      = mean(total_populationE, na.rm = TRUE),
+    avg_white = weighted.mean(pct_white, total_populationE, na.rm = TRUE),
+    avg_black = weighted.mean(pct_black, total_populationE, na.rm = TRUE),
+    avg_hispanic = weighted.mean(pct_hispanic, total_populationE, na.rm = TRUE),
+  ) 
+
+kable(pattern_tbl, 
+      align = c("l","l","l","l","l"), 
+      col.names = c("Severity", "Tracts Number", "Average Population", "Average White Proportion", "Average Black Proportion", "Average Hispanic Proportion"),
+      caption = "Pattern of tarcts with different severity of MOE issues")
 ```
 
 **Pattern Analysis:** [Describe any patterns you observe. Do certain types of communities have less reliable data? What might explain this?]
@@ -242,13 +401,32 @@ If there is a special character like comma, you need use double quote mark so th
 ```{r recommendations-data}
 # Create a summary table using your county reliability data
 # Include: county name, median income, MOE percentage, reliability category
+Summary_tbl <- PA_reliability %>%
+  summarize(
+    county_name = NAME,
+    median_income = median_incomeE,
+    MOE_percentage = MOE,
+    reliability_category = re_categories
+  )
 
 # Add a new column with algorithm recommendations using case_when():
 # - High Confidence: "Safe for algorithmic decisions"
 # - Moderate Confidence: "Use with caution - monitor outcomes"  
 # - Low Confidence: "Requires manual review or additional data"
+Summary_tbl <- Summary_tbl %>%
+  mutate(
+    algorithm_recommendations = case_when(
+      reliability_category == "High Confidence" ~ "Safe for algorithmic decisions",
+      reliability_category == "Moderate Confidence" ~ "Use with caution - monitor outcomes",
+      reliability_category == "Low Confidence" ~ "Requires manual review or additional data"
+    )
+  )
 
 # Format as a professional table with kable()
+kable(Summary_tbl, 
+      align = c("l","l","l","l","l"), 
+      col.names= c("County","Median Income","MOE (%)","Reliability Category", "Algorithm Implementation"), 
+      caption = "Summary Table for County Reliability")
 ```
 
 **Key Recommendations:**
