@@ -18,7 +18,7 @@ execute:
 
 ## Scenario
 
-You are a data analyst for the **[Your State] Department of Human Services**. The department is considering implementing an algorithmic system to identify communities that should receive priority for social service funding and outreach programs. Your supervisor has asked you to evaluate the quality and reliability of available census data to inform this decision.
+You are a data analyst for the **Pennsylvania Department of Human Services**. The department is considering implementing an algorithmic system to identify communities that should receive priority for social service funding and outreach programs. Your supervisor has asked you to evaluate the quality and reliability of available census data to inform this decision.
 
 Drawing on our Week 2 discussion of algorithmic bias, you need to assess not just what the data shows, but how reliable it is and what communities might be affected by data quality issues.
 
@@ -63,7 +63,7 @@ census_api_key("cd859f2a38103dda55948d92b3679de845f42f0f")
 my_state <- "PA"
 ```
 
-**State Selection:** I have chosen **[Pennsylvania]** for this analysis because: I currently live and study here, so understanding the data quality and its implications for local communities is directly relevant to my daily life and policy understanding.
+**State Selection:** I have chosen **Pennsylvania** for this analysis because: I currently live and study here, so understanding the data quality and its implications for local communities is directly relevant to my daily life and policy understanding.
 
 # Part 2: County-Level Resource Assessment
 
@@ -178,7 +178,7 @@ kable(Top5_county,
 
 **Data Quality Commentary:**
 
-[Write 2-3 sentences explaining what these results mean for algorithmic decision-making. Consider: Which counties might be poorly served by algorithms that rely on this income data? What factors might contribute to higher uncertainty?]
+Counties with higher MOE values are more likely to be inaccurately represented in algorithmic decision-making due to the lower reliability of their income data. This means that decisions based on such data may carry systematic bias. For instance, counties with higher MOE may have lower true median incomes that go undetected, leading to missed opportunities for support or resource allocation. This uncertainty may arise because many lower-income residents in these counties are harder to reach or less likely to participate in surveys.
 
 # Part 3: Neighborhood-Level Analysis
 
@@ -203,11 +203,11 @@ selected_counties <- reliability_sort %>%
 kable(selected_counties, 
       align = c("l","l","l","l"),
       col.names = c("County", "Medain Income", "MOE(%)", "Reliability Category"),
-      caption = "2 Selected Counties")
+      caption = "Two Selected Counties")
 
 ```
 
-**Comment on the output:** [write something :)]
+**Comment on the output:** Warren and Philadelphia are selected that represent different reliability levels to do further analysis in tract-level study.
 
 ## 3.2 Tract-Level Demographics
 
@@ -375,7 +375,7 @@ kable(pattern_tbl,
       caption = "Pattern of tarcts with different severity of MOE issues")
 ```
 
-**Pattern Analysis:** [Describe any patterns you observe. Do certain types of communities have less reliable data? What might explain this?]
+**Pattern Analysis:** Tracts with high severity of MOE issues have similar average population sizes compared to those in the moderate group. However, they show much lower average White population share and higher average Black and Hispanic population shares. This suggests that tracts with higher proportions of Black and Hispanic residents tend to have less reliable estimated data. One likely explanation is that these communities face structural challenges in survey data collection, including lower response rates and higher nonresponse bias. Such challenges may stem from factors such as longer work hours, higher population mobility, and language or cultural barriers among immigrant households, which are caused by historical reasons.
 
 
 # Part 5: Policy Recommendations
@@ -394,7 +394,7 @@ kable(pattern_tbl,
 
 [Your integrated 4-paragraph summary here]
 
-## 6.3 Specific Recommendations
+## 5.2 Specific Recommendations
 
 **Your Task:** Create a decision framework for algorithm implementation.
 
@@ -434,10 +434,21 @@ kable(Summary_tbl,
 **Your Task:** Use your analysis results to provide specific guidance to the department.
 
 1. **Counties suitable for immediate algorithmic implementation:** [List counties with high confidence data and explain why they're appropriate]
+```{r}
+
+```
+
 
 2. **Counties requiring additional oversight:** [List counties with moderate confidence data and describe what kind of monitoring would be needed]
+```{r}
+
+```
+
 
 3. **Counties needing alternative approaches:** [List counties with low confidence data and suggest specific alternatives - manual review, additional surveys, etc.]
+```{r}
+
+```
 
 ## Questions for Further Investigation
 
@@ -447,12 +458,12 @@ kable(Summary_tbl,
 
 **Data Sources:** 
 - U.S. Census Bureau, American Community Survey 2018-2022 5-Year Estimates
-- Retrieved via tidycensus R package on [date]
+- Retrieved via tidycensus R package on 2025/9/26
 
 **Reproducibility:** 
-- All analysis conducted in R version [your version]
+- All analysis conducted in R version 4.5.1
 - Census API key required for replication
-- Complete code and documentation available at: [your portfolio URL]
+- Complete code and documentation available at: https://musa-5080-fall-2025.github.io/portfolio-setup-MarkD12138/assignments/assignment_1/assignment1.html
 
 **Methodology Notes:**
 [Describe any decisions you made about data processing, county selection, or analytical choices that might affect reproducibility]
