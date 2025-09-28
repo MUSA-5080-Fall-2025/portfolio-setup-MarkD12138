@@ -138,7 +138,7 @@ PA_reliability <- PA_clean %>%
 PA_reliability_summary <- PA_reliability %>%
   count(re_categories) %>%   
   mutate(
-    percent = n / sum(n) * 100   # 计算百分比
+    percent = n / sum(n) * 100   
   )
 
 PA_reliability_summary
@@ -392,7 +392,13 @@ kable(pattern_tbl,
 
 **Executive Summary:**
 
-[Your integrated 4-paragraph summary here]
+**Overall Pattern Identification**: Overall, MOE values are generally within acceptable bounds at the county level, indicating good reliability for income estimates. But uncertainty is pervasive at the tract level: every tract in two selected counties has at least one racial subgroup with MOE > 15%, and “high-severity” tracts (where multiple subgroups exceed the threshold) are common. These tracts with severe MOE issues exhibit markedly lower average White share and higher Black and Hispanic shares.
+
+**Equity Assessment**: Because MOE is systematically larger in tracts with higher proportions of Black and Hispanic residents, algorithms that rely on these estimates might have issues of mis-classification and under-allocation of resources. Counties and neighborhoods with greater shares of Black and Hispanic populations, which potentially have lower true median incomes, are more likely to be labeled with uncertain data and thus underserved, amplifying pre-existing inequities.
+
+**Root Cause Analysis**: Firstly, smaller subgroup of data at the tract scale naturally owns a smaller sample size, and smaller samples tends to have higher uncertainty. Moreover, in these communities with greater shares of Black and Hispanic residents, due to historical reasons, the residents might face difficulties including language and cultural barriers, time constraints from multiple jobs or long shifts. These difficulties might lead to lower response rates and higher nonresponse bias, raising the issue of MOE and uncertainty of data.
+
+**Strategic Recommendations**: For tracts with lower data reliability (MOE exceeds 15%), the data should not be used directly for algorithmic decision-making; instead, these cases should be referred for manual review. In the long term, efforts should focus on improving data precision in these areas to enhance reliability and, simultaneously, refining algorithms to apply adjusted weighting for high-MOE regions. These measures would improve both the accuracy and fairness of data-driven decisions.
 
 ## 5.2 Specific Recommendations
 
@@ -433,26 +439,48 @@ kable(Summary_tbl,
 
 **Your Task:** Use your analysis results to provide specific guidance to the department.
 
-1. **Counties suitable for immediate algorithmic implementation:** [List counties with high confidence data and explain why they're appropriate]
+1. **Counties suitable for immediate algorithmic implementation:** 
+These counties are appropriate for immediate algorithmic implementation because their MOE values are low, indicating high data reliability and minimizing the risk of biased or incorrect decisions.
 ```{r}
+Counties_high <- PA_reliability %>%
+  summarize(
+    county = NAME,
+    reliability_category = re_categories
+  ) %>%
+   filter(reliability_category == "High Confidence")
 
+kable(Counties_high, 
+      align = c("l","l"), 
+      col.names= c("County","Reliability Category"), 
+      caption = "Counties with High Confidence")
 ```
 
 
-2. **Counties requiring additional oversight:** [List counties with moderate confidence data and describe what kind of monitoring would be needed]
+2. **Counties requiring additional oversight:** 
+These counties have moderate confidence data, meaning their estimates carry more uncertainty, so algorithmic decisions should be closely monitored. These counties require regular data validation, manual review of algorithmic outputs, and targeted follow-up surveys to improve data reliability.
 ```{r}
+Counties_high <- PA_reliability %>%
+  summarize(
+    county = NAME,
+    reliability_category = re_categories
+  ) %>%
+   filter(reliability_category == "Moderate Confidence")
 
+kable(Counties_high, 
+      align = c("l","l"), 
+      col.names= c("County","Reliability Category"), 
+      caption = "Counties with Moderate Confidence")
 ```
 
 
-3. **Counties needing alternative approaches:** [List counties with low confidence data and suggest specific alternatives - manual review, additional surveys, etc.]
-```{r}
-
-```
+3. **Counties needing alternative approaches:** 
+In the Pennsylvania dataset I analyzed, no counties were classified as having low confidence. However, for any counties with low confidence data, these estimates should not be used directly for algorithmic decision-making. Instead, manual review and additional surveys should be implemented to improve the reliability of the data before it is used to inform decisions.
 
 ## Questions for Further Investigation
 
-[List 2-3 questions that your analysis raised that you'd like to explore further in future assignments. Consider questions about spatial patterns, time trends, or other demographic factors.]
+1. How have county and tract level MOE values changed over time when using ACS data from different years? Can we observe a decreasing trend in MOE, indicating that population and median income estimates are becoming more reliable over times?
+
+2. How do MOE patterns vary across states, and is there a relationship between state-level economic indicators (e.g., GDP per capita) and the reliability of ACS data? Are states with stronger economies associated with lower MOE values and therefore more reliable data?
 
 # Technical Notes
 
@@ -466,10 +494,10 @@ kable(Summary_tbl,
 - Complete code and documentation available at: https://musa-5080-fall-2025.github.io/portfolio-setup-MarkD12138/assignments/assignment_1/assignment1.html
 
 **Methodology Notes:**
-[Describe any decisions you made about data processing, county selection, or analytical choices that might affect reproducibility]
+This analysis focuses only on Pennsylvania counties as a case study, so the results may not fully represent national patterns. Additionally, I selected two example counties—one with high confidence and one with moderate confidence—to illustrate algorithmic decision-making implications. This selection is useful for demonstration but also limits the generalizability of the findings.
 
 **Limitations:**
-[Note any limitations in your analysis - sample size issues, geographic scope, temporal factors, etc.]
+This analysis only uses data from Pennsylvania, which may not represent patterns across the entire U.S. Additionally, the analysis focuses on two selected counties, which limits the generalizability of the findings.
 
 ---
 

@@ -25,5 +25,11 @@
   },
   "assignments/assignment_1/assignment1.qmd": {
     "assignment1.html": "9907cd3f"
+  },
+  "labs/week-03/lecture/week3.qmd": {
+    "week3.html": "7bf507fa"
+  },
+  "labs/week-03/scrips/week3_lab_exercise.qmd": {
+    "week3_lab_exercise.html": "d0d4398c"
   }
 }
