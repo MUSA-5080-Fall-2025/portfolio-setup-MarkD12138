@@ -1,0 +1,28 @@
+---
+title: "Week 2 Notes - EDA and Visualization"
+date: "2025-09-22"
+---
+
+## Key Concepts Learned
+- Why this matters: 1. Summary statistics can hide critical patterns 2. Outliers may represent important communities 3. Relationships aren’t always linear 4.	Visual inspection reveals data quality issues
+- Unreliable estimates are widely use, causing poor policy decisions
+- Grammar of Graphics principles: 1. Data 2. Aesthetics 3. Geometries 4. Visual
+- Aes is not for color and visuals and Aes is about variables mapping
+- We should report the corresponding MOEs of ACS estimates and provide context for unreliability
+
+## Coding Techniques
+- left_join(): Keep all rows from left dataset
+- right_join(): Keep all rows from right dataset
+- inner_join(): Keep only rows that match in both
+- full_join(): Keep all rows from both datasets
+- 
+- Aes is not for color and visuals and Aes is about variables mapping
+- Regex can ignore cases (ignore.case = TRUE)
+
+
+## Connections to Policy
+- Most of planners are not repoting the MOEs in their decision
+- Data-driven policy making need to consider the MOEs and report them in document
+
+## Reflection
+- Understand the responsibility for planners of using data with uncertainty in decision making

@@ -649,5 +649,40 @@
     "title": "Week 1 Notes - Course Introduction",
     "section": "Reflection",
     "text": "Reflection\n\nTrying to be familiar with Coding with R (tidyverse)\nExciting for Lab1 !"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html",
+    "href": "weekly-notes/week-03-notes.html",
+    "title": "Week 2 Notes - EDA and Visualization",
+    "section": "",
+    "text": "Why this matters: 1. Summary statistics can hide critical patterns 2. Outliers may represent important communities 3. Relationships aren’t always linear 4. Visual inspection reveals data quality issues\nUnreliable estimates are widely use, causing poor policy decisions\nGrammar of Graphics principles: 1. Data 2. Aesthetics 3. Geometries 4. Visual\nAes is not for color and visuals and Aes is about variables mapping\nWe should report the corresponding MOEs of ACS estimates and provide context for unreliability"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#key-concepts-learned",
+    "href": "weekly-notes/week-03-notes.html#key-concepts-learned",
+    "title": "Week 2 Notes - EDA and Visualization",
+    "section": "",
+    "text": "Why this matters: 1. Summary statistics can hide critical patterns 2. Outliers may represent important communities 3. Relationships aren’t always linear 4. Visual inspection reveals data quality issues\nUnreliable estimates are widely use, causing poor policy decisions\nGrammar of Graphics principles: 1. Data 2. Aesthetics 3. Geometries 4. Visual\nAes is not for color and visuals and Aes is about variables mapping\nWe should report the corresponding MOEs of ACS estimates and provide context for unreliability"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#coding-techniques",
+    "href": "weekly-notes/week-03-notes.html#coding-techniques",
+    "title": "Week 2 Notes - EDA and Visualization",
+    "section": "Coding Techniques",
+    "text": "Coding Techniques\n\nleft_join(): Keep all rows from left dataset\nright_join(): Keep all rows from right dataset\ninner_join(): Keep only rows that match in both\nfull_join(): Keep all rows from both datasets\n\nAes is not for color and visuals and Aes is about variables mapping\nRegex can ignore cases (ignore.case = TRUE)"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#connections-to-policy",
+    "href": "weekly-notes/week-03-notes.html#connections-to-policy",
+    "title": "Week 2 Notes - EDA and Visualization",
+    "section": "Connections to Policy",
+    "text": "Connections to Policy\n\nMost of planners are not repoting the MOEs in their decision\nData-driven policy making need to consider the MOEs and report them in document"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#reflection",
+    "href": "weekly-notes/week-03-notes.html#reflection",
+    "title": "Week 2 Notes - EDA and Visualization",
+    "section": "Reflection",
+    "text": "Reflection\n\nUnderstand the responsibility for planners of using data with uncertainty in decision making"
   }
 ]
