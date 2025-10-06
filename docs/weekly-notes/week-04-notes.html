@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-09-22">
+<meta name="dcterms.date" content="2025-09-29">
 
-<title>Week 3 Notes - EDA and Visualization – Zimu DENG(Mark) - MUSA 5080 Portfolio</title>
+<title>Week 4 Notes - GIS and Spatial Analytics – Zimu DENG(Mark) - MUSA 5080 Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -173,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 3 Notes - EDA and Visualization</h1>
+<h1 class="title">Week 4 Notes - GIS and Spatial Analytics</h1>
 </div>
 
 
@@ -184,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 22, 2025</p>
+      <p class="date">September 29, 2025</p>
     </div>
   </div>
   
@@ -199,36 +199,32 @@ ul.task-list li input[type="checkbox"] {
 <section id="key-concepts-learned" class="level2">
 <h2 class="anchored" data-anchor-id="key-concepts-learned">Key Concepts Learned</h2>
 <ul>
-<li>Why this matters: 1. Summary statistics can hide critical patterns 2. Outliers may represent important communities 3. Relationships aren’t always linear 4. Visual inspection reveals data quality issues</li>
-<li>Unreliable estimates are widely use, causing poor policy decisions</li>
-<li>Grammar of Graphics principles: 1. Data 2. Aesthetics 3. Geometries 4. Visual</li>
-<li>Aes is not for color and visuals and Aes is about variables mapping</li>
-<li>We should report the corresponding MOEs of ACS estimates and provide context for unreliability</li>
+<li>Real Policy Questions Need Spatial Answers</li>
+<li>In spatial analysis, geographic bias in algorithms are existed</li>
+<li>Vector Data vs Raster Data</li>
+<li>Geographic vs.&nbsp;Projected Coordinates</li>
 </ul>
 </section>
 <section id="coding-techniques" class="level2">
 <h2 class="anchored" data-anchor-id="coding-techniques">Coding Techniques</h2>
 <ul>
-<li>left_join(): Keep all rows from left dataset</li>
-<li>right_join(): Keep all rows from right dataset</li>
-<li>inner_join(): Keep only rows that match in both</li>
-<li>full_join(): Keep all rows from both datasets</li>
-<li></li>
-<li>Aes is not for color and visuals and Aes is about variables mapping</li>
-<li>Regex can ignore cases (ignore.case = TRUE)</li>
+<li>sf Package</li>
+<li>st_filter(), st_intersects(), st_touches(), st_within()</li>
+<li>“.predicate” is for setting different relationship</li>
+<li>Spatial Join</li>
+<li>Intersection</li>
 </ul>
 </section>
 <section id="connections-to-policy" class="level2">
 <h2 class="anchored" data-anchor-id="connections-to-policy">Connections to Policy</h2>
 <ul>
-<li>Most of planners are not repoting the MOEs in their decision</li>
-<li>Data-driven policy making need to consider the MOEs and report them in document</li>
+<li>Policy analysis and implication are based on spatial analysis</li>
 </ul>
 </section>
 <section id="reflection" class="level2">
 <h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
 <ul>
-<li>Understand the responsibility for planners of using data with uncertainty in decision making</li>
+<li>Recite the code for different spatial operation</li>
 </ul>
 
 
