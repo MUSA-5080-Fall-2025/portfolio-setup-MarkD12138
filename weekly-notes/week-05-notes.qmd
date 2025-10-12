@@ -1,0 +1,25 @@
+---
+title: "Week 4 Notes - GIS and Spatial Analytics"
+date: "2025-09-29"
+---
+
+## Key Concepts Learned
+- Real Policy Questions Need Spatial Answers
+- In spatial analysis, geographic bias in algorithms are existed
+- Vector Data vs Raster Data
+- Geographic vs. Projected Coordinates
+
+## Coding Techniques
+- sf Package
+- st_filter(), st_intersects(), st_touches(), st_within()
+- ".predicate" is for setting different relationship
+- Spatial Join
+- Intersection
+
+
+## Connections to Policy
+- Policy analysis and implication are based on spatial analysis
+
+
+## Reflection
+- Recite the code for different spatial operation
