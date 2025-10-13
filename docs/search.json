@@ -817,5 +817,40 @@
     "title": "Assignment 2: Spatial Analysis and Visualization",
     "section": "Submission Requirements",
     "text": "Submission Requirements\nWhat to submit:\n\nRendered HTML document posted to your course portfolio with all code, outputs, maps, and text\n\nUse embed-resources: true in YAML so it’s a single file\nAll code should run without errors\nAll maps and charts should display correctly\n\n\nFile naming: LastName_FirstName_Assignment2.html and LastName_FirstName_Assignment2.qmd"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html",
+    "href": "weekly-notes/week-05-notes.html",
+    "title": "Week 5 Notes - Intro to Predictive Modeling with Linear Regression",
+    "section": "",
+    "text": "Statistical learning = a set of approaches for estimating that relationship\nParametric Methods (Make an assumption about the functional form) VS Non-Parametric Methods\nPrediction vs Inference\nR2 for model fitness\nTrain/Test Split"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#key-concepts-learned",
+    "href": "weekly-notes/week-05-notes.html#key-concepts-learned",
+    "title": "Week 5 Notes - Intro to Predictive Modeling with Linear Regression",
+    "section": "",
+    "text": "Statistical learning = a set of approaches for estimating that relationship\nParametric Methods (Make an assumption about the functional form) VS Non-Parametric Methods\nPrediction vs Inference\nR2 for model fitness\nTrain/Test Split"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#coding-techniques",
+    "href": "weekly-notes/week-05-notes.html#coding-techniques",
+    "title": "Week 5 Notes - Intro to Predictive Modeling with Linear Regression",
+    "section": "Coding Techniques",
+    "text": "Coding Techniques\n\nmodel1 &lt;- lm(median_incomeE ~ total_popE, data = pa_data)"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#connections-to-policy",
+    "href": "weekly-notes/week-05-notes.html#connections-to-policy",
+    "title": "Week 5 Notes - Intro to Predictive Modeling with Linear Regression",
+    "section": "Connections to Policy",
+    "text": "Connections to Policy\n\nAlgorithmic Bias"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#reflection",
+    "href": "weekly-notes/week-05-notes.html#reflection",
+    "title": "Week 5 Notes - Intro to Predictive Modeling with Linear Regression",
+    "section": "Reflection",
+    "text": "Reflection\n\nNice competition"
   }
 ]
