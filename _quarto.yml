@@ -24,8 +24,6 @@ website:
         menu:
           - href: labs/lab0/lab0_template.qmd
             text: "Lab 0: dplyr Basics"
-          - href: labs/lab1/
-            text: "Lab 1" 
       - text: "Assignment"
         menu:
           - href: assignments/assignment_1/assignment1.qmd
