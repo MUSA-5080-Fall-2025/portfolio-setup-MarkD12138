@@ -89,9 +89,11 @@ Use `tidycensus` to download tract-level demographic data for Pennsylvania.
 - Population 65 years and over (you may need to sum multiple age categories)
 
 **Your Task:**
-```{r}
+```{r, include=FALSE}
 census_api_key("cd859f2a38103dda55948d92b3679de845f42f0f")
+```
 
+```{r}
 # Get demographic data from ACS
 PA_data <- get_acs(
   geography = "tract",
@@ -617,23 +619,29 @@ Choose ONE of the following challenge exercises, or propose your own research qu
 
 ```{r}
 # Load your additional dataset
+PPR <- st_read ("data/PPR_Program_Sites.geojson")
 
+st_crs(tracts)
 
-
-
+PPR_proj <- st_transform(PPR, crs = 3363)
 ```
 
 **Questions to answer:**
 - What dataset did you choose and why?
+Parks & Recreation Program Sites
 - What is the data source and date?
+The data source is OpenDataPhilly, and it is data from 2022
 - How many features does it contain?
+171 features, indicating 171 PPR facilities
 - What CRS is it in? Did you need to transform it?
+"EPSG",4326
+I need to transform it for spatial analysis 
 
 ---
 
 2. **Pose a research question**
 
-Write a clear research statement that your analysis will answer.
+Is lack of recreation access associated with vulnerable tracts' median income?
 
 **Examples:**
 - "Do vulnerable tracts have adequate public transit access to hospitals?"
@@ -656,17 +664,37 @@ Use at least TWO spatial operations to answer your research question.
 
 **Your Task:**
 ```{r}
+library(ggplot2)
 # Your spatial analysis
+## Filter the vulnerable tracts in Philly
+Vul_Philly <- tracts_vul_proj %>%
+  filter(NAMELSADCO == "Philadelphia County")
 
+## Buffer a walkable distance (1500 foots, 5 minutes by walk) for tracts
+Vul_Philly_buf <- st_buffer(Vul_Philly, dist = 1500)
 
+## Aggregate the number of PPR faclities in buffers
+facilities_in_buf <- st_join(PPR_proj, Vul_Philly_buf, join = st_within)
 
+facilities_count <- facilities_in_buf %>%
+  st_drop_geometry() %>%          
+  group_by(NAMELSAD) %>%             
+  summarise(facility_count = n())
 
+Vul_Philly_buf <- Vul_Philly_buf %>%
+  left_join(facilities_count, by = "NAMELSAD")
 
-
-
-
-
-
+## Scatter Plot and regression line
+ggplot(Vul_Philly_buf, aes(x = median_incomeE, y = facility_count)) +
+  geom_point(alpha = 0.8) +
+  geom_smooth(method = "lm", se = TRUE) +
+  labs(
+    x = "Median Household Income",
+    y = "Facility Count (within 1500 ft buffer)",
+    title = "Recreation Facilities vs. Vulnerable Tracts' Median Income",
+    subtitle = "Tracts (Philadelphia); fitted linear regression with 95% CI"
+  ) +
+  theme_minimal(base_size = 12)
 ```
 
 **Analysis requirements:**
@@ -677,13 +705,13 @@ Use at least TWO spatial operations to answer your research question.
 - Brief interpretation of results (3-5 sentences)
 
 **Your interpretation:**
-
-[Write your findings here]
+At the tract level, there appears to be no strong linear relationship between the number of PPR recreation facilities within a five-minute walking distance (1500 ft buffer) and the tracts’ median household income. However, it is still reasonable to believe that a lack of recreation access is associated with tract vulnerability. The main limitations of this short analysis lie in the use of median income as a metric for vulnerability and the small number of observations. If recreation facility data were available at the county level, a larger sample size and the use of vulnerable population share as a vulnerability indicator could allow for a more meaningful regression analysis and deeper insights.
 
 
 ## Finally - A few comments about your incorporation of feedback!
 Take a few moments to clean up your markdown document and then write a line or two or three about how you may have incorporated feedback that you recieved after your first assignment. 
 
+I have hidden my API key.
 ---
 
 ## Submission Requirements
