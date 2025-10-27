@@ -1,13 +1,15 @@
 ---
-title: "Philadelphia Housing Model—Technical Appendix"
+title: "Assignment 3: Philadelphia Housing Model—Technical Appendix"
 subtitle: "Predicting Residential Property Prices"
 author: "Ming Cao, Mark Deng, Jun Luu, Josh Rigsby, Alex Stauffer, Tess Vu"
+date: today
 format: 
   html:
-    code-fold: show
+    code-fold: false
     toc: true
     toc-location: left
-    theme: lux
+    theme: cosmo
+    embed-resources: true
 execute:
   message: false
   warning: false
