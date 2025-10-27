@@ -32,7 +32,7 @@ website:
             text: "Assignment 2: Spatial Analysis and Visualization"
 format:
   html:
-    theme: cosmo
+    theme: cosmo 
     toc: true
     code-fold: true
 
