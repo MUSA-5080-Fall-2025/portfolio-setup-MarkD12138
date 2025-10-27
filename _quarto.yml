@@ -30,6 +30,10 @@ website:
             text: "Assignment 1: Census Data Exploration"
           - href: assignments/assignment_2/assignment2.qmd
             text: "Assignment 2: Spatial Analysis and Visualization"
+          - href: assignments/assignment_3/Cao_Deng_Luu_Rigsby_Stauffer_Vu_Appendix.qmd
+            text: "Assignment 3: Presentation"
+          - href: assignments/assignment_3/Cao_Deng_Luu_Rigsby_Stauffer_Vu_Appendix.qmd
+            text: "Assignment 3: Technical_Appendix"
 format:
   html:
     theme: cosmo 
