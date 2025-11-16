@@ -41,7 +41,7 @@ website:
           - href: assignments/assignment_3/Cao_Deng_Luu_Rigsby_Stauffer_Vu_Appendix.qmd
             text: "Assignment 3: Technical_Appendix"
           - href: assignments/assignment_4/assignment4.qmd
-            text: "Assignment4: Spatial Predictive Analysis"
+            text: "Assignment 4: Spatial Predictive Analysis"
 format:
   html:
     theme: cosmo 
