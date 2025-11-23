@@ -42,6 +42,8 @@ website:
             text: "Assignment 3: Technical_Appendix"
           - href: assignments/assignment_4/assignment4.qmd
             text: "Assignment 4: Spatial Predictive Analysis"
+          - href: assignments/assignment_5/assignment5.qmd
+            text: "Assignment 5: Temporal Predictive Analysis"
 format:
   html:
     theme: cosmo 
